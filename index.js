@@ -28,10 +28,10 @@ app.post("/auth/register", registerValidation, register);
 app.get("/auth/me", checkAuth, getMe);
 
 app.get("/posts", PostController.getAll);
-app.get("/posts/:id", PostController.getOne);
 app.post("/posts", checkAuth, postCreateValidation, PostController.create);
+app.get("/posts/:id", PostController.getOne);
+app.patch("/posts/:id", checkAuth, PostController.updateOne);
 app.delete("/posts/:id", checkAuth, PostController.deleteOne);
-// app.patch("/posts", PostController.update);
 
 app.listen(4444, (err) => {
   if (err) {
