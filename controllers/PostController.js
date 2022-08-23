@@ -54,7 +54,7 @@ export const getOne = async (req, res) => {
   }
 };
 
-export const deleteOne = (req, res) => {
+export const deleteOne = async (req, res) => {
   try {
     const postId = req.params.id;
 
